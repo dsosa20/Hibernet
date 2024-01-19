@@ -16,4 +16,6 @@ public interface AutorDAO {
 	
 	public void del(int id);
 	
+	public List<Autor> findAll(String busqueda);
+	
 }

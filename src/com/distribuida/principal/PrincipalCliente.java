@@ -18,15 +18,15 @@ public class PrincipalCliente {
 		// CRUD
 		
 		// add
-		// Cliente cliente1 = new Cliente(0,"17521469222","Nombre","Apellido","Direccioxd","654654654","ijjdjd@nfdd.cs");
-		// clienteDAO.add(cliente1);
+		//Cliente cliente1 = new Cliente(0,"17521469222","Juancho","Valencia","por algun lado","777777777","juanchoxd@corroe.cs");
+		//clienteDAO.add(cliente1);
 		
 		// up
-		// Cliente cliente2 = new Cliente(40,"1752146922","Manuel","Maju","Direccio X","0954654654","paleta54@hotchanell.com");
-		// clienteDAO.up(cliente2);
+		//Cliente cliente2 = new Cliente(39,"1752146922","Manuel","Maju","Direccio X","0954654654","paleta54@hotchanell.com");
+		//clienteDAO.up(cliente2);
 		
 		// delete
-		// clienteDAO.del(40);
+		clienteDAO.del(39);
 		
 		//findAll
 		List<Cliente> clientes = clienteDAO.findAll();
@@ -37,8 +37,8 @@ public class PrincipalCliente {
 		}
 		
 		// findOne
-		// Cliente cliente = clienteDAO.findOne(2);
-		// System.out.println(cliente.toString());
+		//Cliente cliente = clienteDAO.findOne(2);
+		//System.out.println(cliente.toString());
 		
 		
 		context.close();
