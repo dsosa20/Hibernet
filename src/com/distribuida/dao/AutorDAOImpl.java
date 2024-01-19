@@ -46,11 +46,14 @@ public class AutorDAOImpl implements AutorDAO {
 	@Transactional
 	public void add(Autor autor) {
 		// TODO Auto-generated method stub
-		Session session =sessionFactory.getCurrentSession();
-		//HQL INSERT INTO...VALUES....(no admite)
-		//HQL INSERT INTO...SELECT....(no admite)
+     Session session=sessionFactory.getCurrentSession();
+		
+		//HQL INSERT TO VALUES no admite
+		//INSERT INTO .... SELECT ... 
+		
+     session.saveOrUpdate(autor);
 	}
-
+   
 	@Override
 	@Transactional
 	public void up(Autor autor) {
