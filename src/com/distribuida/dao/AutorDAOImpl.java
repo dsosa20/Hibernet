@@ -36,9 +36,9 @@ public class AutorDAOImpl implements AutorDAO {
 	public Autor findOne(int id) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		Query<Autor> query = session.createQuery("SELECT au FROM Autor au WHERE idAutor =:keyIdAutor",Autor.class);
-		query.setParameter("KeyIdAutor", id);
-		return query.getSingleResult();
+		Query query = session.createQuery("SELECT au FROM Autor au WHERE idAutor =:keyIdAutor");
+		query.setParameter("keyIdAutor", id);
+		return (Autor) query.getSingleResult();
 		
 	}
 
@@ -59,8 +59,9 @@ public class AutorDAOImpl implements AutorDAO {
 	public void up(Autor autor) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		Query query =session.createQuery("UPDATE Autor set nombre=:nombre ,apellido=:apellido, pais=:pais, direccion=:direccion, telefono=:telefono, correo=:correo WHERE idAutor =:idAutor",Autor.class);
-		query.setParameter("nombre",autor.getNombre());
+		
+		Query query =session.createQuery("UPDATE Autor set nombre=:nombre ,apellido=:apellido, pais=:pais, direccion=:direccion, telefono=:telefono, correo=:correo WHERE idAutor =:idAutor");
+	    query.setParameter("nombre",autor.getNombre());
 		query.setParameter("apellido",autor.getApellido());
 		query.setParameter("pais",autor.getPais());
 		query.setParameter("direccion",autor.getDireccion());
@@ -77,10 +78,9 @@ public class AutorDAOImpl implements AutorDAO {
 	public void del(int id) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("DELETE FROM Autor au.idAutor =: idAutor");
-		query .setParameter ("idAutor",id);
+		Query query =session.createQuery("DELETE FROM Autor au WHERE au.idAutor=:idAutor ");
+		query.setParameter("idAutor", id);
 		query.executeUpdate();
-
 	}
 
 	@Override
